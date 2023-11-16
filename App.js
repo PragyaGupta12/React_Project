@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import logo from './image/logo.png'
 
-const appName = (
+const app = (
+    <a href="/">
     <img src={logo} alt="logo" />
+    </a>
 ) 
 const HeaderComponent = ()=>{
     return(
         <div className='navbar'>
-            {appName}
+            {app}
             <div className="nav-items">
                 <ul>
                     <li>Home</li>
@@ -20,6 +22,24 @@ const HeaderComponent = ()=>{
         </div>
     )
 }
+const BodyComponent = () =>{
+    return(
+        <h4>Body</h4>
+    )
+}
 
-const root = ReactDOM.createRoot(document.getElementById('header'))
-root.render(<HeaderComponent/>)
+const FooterComponent =()=>{
+    return (
+        <h3>Footer</h3>
+    )
+}
+
+const AppLayout =()=>{
+    <div>
+        <HeaderComponent/>
+        <BodyComponent/>
+        <FooterComponent/>
+    </div>
+}
+const root = ReactDOM.createRoot(document.getElementById('main'))
+root.render(<AppLayout/>)
