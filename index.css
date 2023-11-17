@@ -14,3 +14,11 @@
 .logo{
     margin: 15px;
 }
+.cardItems{
+    width: 200px;
+    height: auto;
+}
+.cardItems > img{
+    width: 150px;
+    height: auto;
+}
