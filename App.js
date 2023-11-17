@@ -4,7 +4,7 @@ import logo from './image/logo.png'
 
 const app = (
     <a href="/">
-    <img src={logo} alt="logo" />
+    <img src={logo} alt="logo" className='logo'/>
     </a>
 ) 
 const HeaderComponent = ()=>{
@@ -35,11 +35,12 @@ const FooterComponent =()=>{
 }
 
 const AppLayout =()=>{
-    <div>
-        <HeaderComponent/>
-        <BodyComponent/>
-        <FooterComponent/>
-    </div>
+    <> 
+    //this empty tag is React.Fragment and it acts like one parent inside JSX
+    <HeaderComponent/>
+    <BodyComponent/>
+    <FooterComponent/>
+    </>
 }
 const root = ReactDOM.createRoot(document.getElementById('main'))
-root.render(<AppLayout/>)
+root.render(<HeaderComponent/>)
