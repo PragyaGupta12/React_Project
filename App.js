@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import logo from './image/logo.png'
 
+//config-driven UI
 const app = (
     <a href="/">
     <img src={logo} alt="logo" className='logo'/>
@@ -28,6 +29,12 @@ const fruits = {
     cusines: ["Fruits", "Healthy"],
     rating: "4.2"
 }
+const salad = {
+    name: "Salad Plaza",
+    image: "https://www.twopeasandtheirpod.com/wp-content/uploads/2023/06/Crate-Barrel-Melamine-Bowl.jpg",
+    cusines: ["Salad", "Healthy"],
+    rating: "4.1"
+}
 const Cards = ()=>{
     return (
         <div className="card">
@@ -42,14 +49,6 @@ const Cards = ()=>{
 const BodyComponent = () =>{
     return (
     <div className='restaurant-list'>
-        <Cards/>
-        <Cards/>
-        <Cards/>
-        <Cards/>
-        <Cards/>
-        <Cards/>
-        <Cards/>
-        <Cards/>
         <Cards/>
         <Cards/>
         <Cards/>
