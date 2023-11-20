@@ -14,11 +14,18 @@
 .logo{
     margin: 15px;
 }
-.cardItems{
+.card{
     width: 200px;
     height: auto;
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 10px;
 }
-.cardItems > img{
-    width: 150px;
-    height: auto;
+.card > img{
+    width: 100%; 
+    /* this 100% will make sure that the image fits to the size of the card exactly */
+}
+.restaurant-list{
+    display: flex;
+    flex-wrap: wrap;
 }
