@@ -23,30 +23,220 @@ const HeaderComponent = () => {
     </div>
   );
 };
-const data = {
-  "card":{
-    "name": "Fruit Plaza",
-    "image":
-      "https://www.archanaskitchen.com/images/archanaskitchen/world_breakfast/fresh_fruit_bowl_recipe.jpg",
-    "cuisines": ["Fruits", "Healthy"],
-    "rating": "4.2",
+const data = [
+  {
+    "info": {
+      "id": "621563",
+      "name": "Daily Cakes Bakers",
+      "cloudinaryImageId": "cmvnpceb2kdxi249ccrl",
+      "locality": "August Kranti Marg",
+      "areaName": "Hauz Khas",
+      "costForTwo": "₹250 for two",
+      "cuisines": [
+        "Bakery",
+        "Desserts",
+        "Cafe"
+      ],
+      "avgRating": 3.9,
+      "veg": true,
+      "feeDetails": {
+        "restaurantId": "621563",
+        "fees": [
+          {
+            "name": "BASE_DISTANCE",
+            "fee": 4800
+          },
+          {
+            "name": "BASE_TIME"
+          },
+          {
+            "name": "ANCILLARY_SURGE_FEE"
+          }
+        ],
+        "totalFee": 4800
+      },
+      "parentId": "370222",
+      "avgRatingString": "3.9",
+      "totalRatingsString": "1K+",
+      "promoted": true,
+      "adTrackingId": "cid=9160385~p=1~eid=0000018b-fd55-a9b5-51a6-bc30005a0113~srvts=1700762331573~45995",
+      "sla": {
+        "deliveryTime": 31,
+        "lastMileTravel": 1.9,
+        "serviceability": "SERVICEABLE",
+        "slaString": "31 mins",
+        "lastMileTravelString": "1.9 km",
+        "iconType": "ICON_TYPE_EMPTY"
+      },
+      "availability": {
+        "nextCloseTime": "2023-11-23 23:59:00",
+        "opened": true
+      },
+      "badges": {
+        "imageBadges": [
+          {
+            "imageId": "v1695133679/badges/Pure_Veg111.png",
+            "description": "pureveg"
+          }
+        ]
+      },
+      "isOpen": true,
+      "type": "F",
+      "badgesV2": {
+        "entityBadges": {
+          "imageBased": {
+            "badgeObject": [
+              {
+                "attributes": {
+                  "imageId": "v1695133679/badges/Pure_Veg111.png",
+                  "description": "pureveg"
+                }
+              }
+            ]
+          },
+          "textExtendedBadges": {
+            
+          },
+          "textBased": {
+            
+          }
+        }
+      },
+      "aggregatedDiscountInfoV3": {
+        "header": "55% OFF",
+        "discountTag": "FLAT DEAL"
+      },
+      "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+          "lottie": {
+            
+          },
+          "video": {
+            
+          }
+        }
+      },
+      "reviewsSummary": {
+        
+      },
+      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      "restaurantOfferPresentationInfo": {
+        
+      }
+    },
+    "analytics": {
+      
+    },
+    "cta": {
+      "link": "swiggy://menu?restaurant_id=621563",
+      "text": "RESTAURANT_MENU",
+      "type": "DEEPLINK"
+    }
   },
-  "card":{
-    "name": "Salad Plaza",
-    "image":
-      "https://www.twopeasandtheirpod.com/wp-content/uploads/2023/06/Crate-Barrel-Melamine-Bowl.jpg",
-    "cuisines": ["Salad", "Healthy"],
-    "rating": "4.1",
-  },
-};
-
+  {
+    "info": {
+      "id": "253734",
+      "name": "McDonald's",
+      "cloudinaryImageId": "6dc3ed2ca21d71acff7c2a51dfe4c720",
+      "locality": "E Block",
+      "areaName": "South Extension 2",
+      "costForTwo": "₹400 for two",
+      "cuisines": [
+        "American"
+      ],
+      "avgRating": 4.3,
+      "feeDetails": {
+        "restaurantId": "253734",
+        "fees": [
+          {
+            "name": "BASE_DISTANCE",
+            "fee": 4900
+          },
+          {
+            "name": "BASE_TIME"
+          },
+          {
+            "name": "ANCILLARY_SURGE_FEE"
+          }
+        ],
+        "totalFee": 4900
+      },
+      "parentId": "630",
+      "avgRatingString": "4.3",
+      "totalRatingsString": "10K+",
+      "sla": {
+        "deliveryTime": 23,
+        "lastMileTravel": 3,
+        "serviceability": "SERVICEABLE",
+        "slaString": "23 mins",
+        "lastMileTravelString": "3.0 km",
+        "iconType": "ICON_TYPE_EMPTY"
+      },
+      "availability": {
+        "nextCloseTime": "2023-11-24 03:45:00",
+        "opened": true
+      },
+      "badges": {
+        
+      },
+      "isOpen": true,
+      "aggregatedDiscountInfoV2": {
+        
+      },
+      "type": "F",
+      "badgesV2": {
+        "entityBadges": {
+          "textBased": {
+            
+          },
+          "imageBased": {
+            
+          },
+          "textExtendedBadges": {
+            
+          }
+        }
+      },
+      "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+          "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+          "lottie": {
+            
+          },
+          "video": {
+            
+          }
+        }
+      },
+      "reviewsSummary": {
+        
+      },
+      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      "restaurantOfferPresentationInfo": {
+        
+      }
+    },
+    "analytics": {
+      
+    },
+    "cta": {
+      "link": "swiggy://menu?restaurant_id=253734",
+      "text": "RESTAURANT_MENU",
+      "type": "DEEPLINK"
+    }
+  }
+]
+ 
 const Cards = ({image, name, cuisines, rating}) => {
   return (
     <div className="card">
-      <img src={card.image} alt="Fruits" />
-      <h2>{card.name}</h2>
-      <h3>{card.cuisines.join(", ")}</h3>
-      <h4>{card.rating} stars</h4>
+      <img src={image} alt="Fruits" />
+      <h2>{name}</h2>
+      <h3>{cuisines.join(", ")}</h3>
+      <h4>{rating} stars</h4>
     </div>
   );
 };
@@ -54,7 +244,7 @@ const Cards = ({image, name, cuisines, rating}) => {
 const BodyComponent = () => {
   return (//passing props 
     <div className="restaurant-list">
-      <Cards image = {data.card[0].image} name = {data.card[0].name} cuisines = {data.card[0].cuisines} rating = {data.card[0].rating}/>
+      <Cards image = {data[0].image} name = {data[0].name} cuisines = {data[0].cuisines} rating = {data[0].rating}/>
       {/* <Cards name = {data[1].name}/>
       <Cards name = {data[0].name}/>
       <Cards name = {data[1].name}/> */}
