@@ -251,7 +251,8 @@ const BodyComponent = () => {
   return (//passing props 
     <div className="restaurant-list">
       <Cards cloudinaryImageId = {data[0].info.cloudinaryImageId} name = {data[0].info.name} cuisines = {data[0].info.cuisines} avgRating = {data[0].info.avgRating}/>
-      <Cards cloudinaryImageId = {data[1].info.cloudinaryImageId} name = {data[1].info.name} cuisines = {data[1].info.cuisines} avgRating = {data[1].info.avgRating}/>      
+      <Cards {...data[1].info}/>      
+      {/* spread operator */}
     </div>
   );
 };
