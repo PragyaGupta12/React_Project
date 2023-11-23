@@ -23,30 +23,30 @@ const HeaderComponent = () => {
     </div>
   );
 };
-const data = [
-  {
-    name: "Fruit Plaza",
-    image:
+const data = {
+  "card":{
+    "name": "Fruit Plaza",
+    "image":
       "https://www.archanaskitchen.com/images/archanaskitchen/world_breakfast/fresh_fruit_bowl_recipe.jpg",
-    cuisines: ["Fruits", "Healthy"],
-    rating: "4.2",
+    "cuisines": ["Fruits", "Healthy"],
+    "rating": "4.2",
   },
-  {
-    name: "Salad Plaza",
-    image:
+  "card":{
+    "name": "Salad Plaza",
+    "image":
       "https://www.twopeasandtheirpod.com/wp-content/uploads/2023/06/Crate-Barrel-Melamine-Bowl.jpg",
-    cuisines: ["Salad", "Healthy"],
-    rating: "4.1",
+    "cuisines": ["Salad", "Healthy"],
+    "rating": "4.1",
   },
-];
+};
 
 const Cards = ({image, name, cuisines, rating}) => {
   return (
     <div className="card">
-      <img src={image} alt="Fruits" />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h4>{rating} stars</h4>
+      <img src={card.image} alt="Fruits" />
+      <h2>{card.name}</h2>
+      <h3>{card.cuisines.join(", ")}</h3>
+      <h4>{card.rating} stars</h4>
     </div>
   );
 };
@@ -54,10 +54,10 @@ const Cards = ({image, name, cuisines, rating}) => {
 const BodyComponent = () => {
   return (//passing props 
     <div className="restaurant-list">
-      <Cards image = {data[0].image} name = {data[0].name} cuisines = {data[0].cuisines} rating = {data[0].rating}/>
-      <Cards name = {data[1].name}/>
+      <Cards image = {data.card[0].image} name = {data.card[0].name} cuisines = {data.card[0].cuisines} rating = {data.card[0].rating}/>
+      {/* <Cards name = {data[1].name}/>
       <Cards name = {data[0].name}/>
-      <Cards name = {data[1].name}/>
+      <Cards name = {data[1].name}/> */}
     </div>
   );
 };
