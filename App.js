@@ -252,7 +252,7 @@ const BodyComponent = () => {
     <div className="restaurant-list">
       <Cards cloudinaryImageId = {data[0].info.cloudinaryImageId} name = {data[0].info.name} cuisines = {data[0].info.cuisines} avgRating = {data[0].info.avgRating}/>
       <Cards {...data[1].info}/>      
-      {/* spread operator */}
+      {/* ... spread operator spreads the objects and it works just like data[0] one */}
     </div>
   );
 };
