@@ -229,14 +229,20 @@ const data = [
     }
   }
 ]
- 
-const Cards = ({image, name, cuisines, rating}) => {
+ //destructuring the props and passing them as params
+const Cards = ({cloudinaryImageId, name, cuisines, avgRating}) => {
   return (
+    //info?. this ?. is for optional chaining
     <div className="card">
-      <img src={image} alt="Fruits" />
+      {/* <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+data[0].info?.cloudinaryImageId} alt="Fruits" />
+      <h2>{data[0].info?.name}</h2>
+      <h3>{data[0].info?.cuisines.join(", ")}</h3>
+      <h4>{data[0].info?.avgRating} stars</h4> */}
+
+      <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+ cloudinaryImageId} alt="Fruits" />
       <h2>{name}</h2>
       <h3>{cuisines.join(", ")}</h3>
-      <h4>{rating} stars</h4>
+      <h4>{avgRating} stars</h4>
     </div>
   );
 };
@@ -244,10 +250,8 @@ const Cards = ({image, name, cuisines, rating}) => {
 const BodyComponent = () => {
   return (//passing props 
     <div className="restaurant-list">
-      <Cards image = {data[0].image} name = {data[0].name} cuisines = {data[0].cuisines} rating = {data[0].rating}/>
-      {/* <Cards name = {data[1].name}/>
-      <Cards name = {data[0].name}/>
-      <Cards name = {data[1].name}/> */}
+      <Cards cloudinaryImageId = {data[0].info.cloudinaryImageId} name = {data[0].info.name} cuisines = {data[0].info.cuisines} avgRating = {data[0].info.avgRating}/>
+      <Cards cloudinaryImageId = {data[1].info.cloudinaryImageId} name = {data[1].info.name} cuisines = {data[1].info.cuisines} avgRating = {data[1].info.avgRating}/>      
     </div>
   );
 };
