@@ -256,7 +256,7 @@ const BodyComponent = () => {
       
       {
         data.map(list=>{
-          <Cards {...data[1].info}/>
+          return <Cards {...list.info}/>
         })
       }
     </div>
