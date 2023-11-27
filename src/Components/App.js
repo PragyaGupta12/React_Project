@@ -1,17 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import logo from "/src/logo.png";
+import AppLogo from "./logo.js"
 
 //config-driven UI
-const app = (
-  <a href="/">
-    <img src={logo} alt="logo" className="logo" />
-  </a>
-);
+
 const HeaderComponent = () => {
   return (
     <div className="navbar">
-      {app}
+      <AppLogo />
       <div className="nav-items">
         <ul>
           <li>Home</li>
