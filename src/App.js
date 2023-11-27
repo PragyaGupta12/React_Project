@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import logo from "./image/logo.png";
+import logo from "/src/logo.png";
 
 //config-driven UI
 const app = (
@@ -255,7 +255,7 @@ const BodyComponent = () => {
       {/* ... spread operator spreads the objects and it works just like data[0] one */}
       
       {
-        data.map(list=>{
+        data.map((list)=>{
           return <Cards {...list.info} key={list.info.id}/>
         })
       }
