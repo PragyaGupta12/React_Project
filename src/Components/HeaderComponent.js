@@ -1,6 +1,6 @@
 import logo from "/src/logo.png";
 
-export const AppLogo = () => (
+const AppLogo = () => (
   <a href="/">
     <img src={logo} alt="logo" className="logo" />
   </a>
