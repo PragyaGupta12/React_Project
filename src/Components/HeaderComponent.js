@@ -6,7 +6,7 @@ const AppLogo = () => (
   </a>
 ); 
 
-export const HeaderComponent = () => {
+const HeaderComponent = () => {
   return (
     <div className="navbar">
       <AppLogo />
@@ -22,3 +22,4 @@ export const HeaderComponent = () => {
   );
 };
 
+export default HeaderComponent
