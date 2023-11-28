@@ -1,24 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AppLogo from "./logo.js"
+import {AppLogo, HeaderComponent} from "./HeaderComponent.js"
 
 //config-driven UI
 
-const HeaderComponent = () => {
-  return (
-    <div className="navbar">
-      <AppLogo />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 const data = [
   {
     "info": {
