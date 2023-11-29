@@ -1,16 +1,22 @@
-import { data } from "../Config";
-import  CardData from "../Components/Cards.js";
+import { data } from "../Config"; //named import
+import  CardData from "../Components/Cards.js"; //default import
+import { useState } from "react"; //named import
 
 const BodyComponent = () => {
+  //local state variable in react
+  const [searchText, setSearchText] = useState("KFC") //useState return an array that has the variable and a func to update that variable
+//this KFC is a default value that will display in the search box
+
   return (
     <>
     <div className="search-container">
       <input type="text" 
       className="search" 
       placeholder="Search" 
-      value={search}
+      value={searchText}
       onChange={(e)=>{
-        search = console.log(e.target.value)
+        //e.target.value is nothing but the val we type in the search box
+        setSearchText(e.target.value)
       }}
       
       />
