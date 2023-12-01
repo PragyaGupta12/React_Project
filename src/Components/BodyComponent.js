@@ -1,6 +1,6 @@
 import { data } from "../Config"; //named import
 import CardData from "../Components/Cards.js"; //default import
-import { useState } from "react"; //named import
+import { useState, useEffect } from "react"; //named import
 
 function filterData(searchText, filteredData) {
   const restoData = filteredData.filter((resData) => resData.info.name.includes(searchText)
