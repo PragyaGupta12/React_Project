@@ -3,7 +3,8 @@ import CardData from "../Components/Cards.js"; //default import
 import { useState, useEffect } from "react"; //named import
 
 function filterData(searchText, filteredData) {
-  const restoData = filteredData.filter((resData) => resData.info.name.includes(searchText)
+  const restoData = filteredData.filter((resData) =>
+    resData.info.name.includes(searchText)
   );
   return restoData;
 }
@@ -13,15 +14,17 @@ const BodyComponent = () => {
   const [searchText, setSearchText] = useState(); //useState return an array that has the variable and a func to update that variable
   //the value passed in useState() is a default value that will display in the search box
 
-  useEffect(()=>{
-    getRestoData()
-  })
+  useEffect(() => {
+    getRestoData();
+  }, []);
 
-async function getRestoData(){
-  const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.5584489&lng=77.2029376&carousel=true&third_party_vendor=1")
-  const JSONData = await data.json()
-  console.log(JSONData)
-}
+  async function getRestoData() {
+    const data = await fetch(
+      "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.5584489&lng=77.2029376&carousel=true&third_party_vendor=1"
+    );
+    const JSONData = await data.json();
+    console.log(JSONData);
+  }
 
   return (
     <>
