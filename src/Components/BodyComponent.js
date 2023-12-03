@@ -22,8 +22,8 @@ const BodyComponent = () => {
     const data = await fetch(
       "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.5584489&lng=77.2029376&carousel=true&third_party_vendor=1"
     );
-    const JSONData = await data.json();
-    console.log(JSONData);
+    const json = await data.json();
+    console.log(json);
   }
 
   return (
