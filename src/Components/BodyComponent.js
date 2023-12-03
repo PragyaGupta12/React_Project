@@ -20,10 +20,9 @@ const BodyComponent = () => {
 
   async function getRestoData() {
     const data = await fetch(
-      "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.5584489&lng=77.2029376&carousel=true&third_party_vendor=1"
-    );
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      );
     const json = await data.json();
-    console.log(json);
   }
 
   return (
