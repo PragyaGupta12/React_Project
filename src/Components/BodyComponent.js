@@ -1,6 +1,7 @@
 import { data } from "../Config"; //named import
 import CardData from "../Components/Cards.js"; //default import
 import { useState, useEffect } from "react"; //named import
+import Shimmer from "./Shimmer.js";
 
 function restaurantData(searchText, restaurants) {
   const restoData = restaurants.filter((resData) =>
@@ -10,13 +11,14 @@ function restaurantData(searchText, restaurants) {
 }
 const BodyComponent = () => {
   //local state variable in react
-  const [restaurants, setRestaurant] = useState(data);
+  // const [restaurants, setRestaurant] = useState(data);
+  const [restaurants, setRestaurant] = useState([]);
   const [searchText, setSearchText] = useState(); //useState return an array that has the variable and a func to update that variable
   //the value passed in useState() is a default value that will display in the search box
 
   useEffect(() => {
     getRestoData();
-  }, []);
+  }, []); //empty dependency array that means this API fetch will load after the page is rendered.
 
   async function getRestoData() {
     const data = await fetch(
@@ -26,7 +28,10 @@ const BodyComponent = () => {
     setRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
 
-  return (
+  //Conditional Rendering 
+  //using ternary operator => if condition ? (then) : (else)
+
+  return restaurants.length === 0 ? (<Shimmer/>) : (
     <>
       <div className="search-container">
         <input
