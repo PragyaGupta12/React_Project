@@ -14,7 +14,7 @@ const CardData = ({ cloudinaryImageId, name, cuisines, avgRating }) => {
           src={
             IMG_CDN_LINK + cloudinaryImageId
           }
-          alt="Fruits"
+          alt=""
         />
         <h2>{name}</h2>
         <h3>{cuisines.join(", ")}</h3>

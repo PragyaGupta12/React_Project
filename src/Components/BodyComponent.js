@@ -2,15 +2,15 @@ import { data } from "../Config"; //named import
 import CardData from "../Components/Cards.js"; //default import
 import { useState, useEffect } from "react"; //named import
 
-function filterData(searchText, filteredData) {
-  const restoData = filteredData.filter((resData) =>
+function restaurantData(searchText, restaurants) {
+  const restoData = restaurants.filter((resData) =>
     resData.info.name.includes(searchText)
   );
   return restoData;
 }
 const BodyComponent = () => {
   //local state variable in react
-  const [filteredData, setfilteredData] = useState(data);
+  const [restaurants, setRestaurant] = useState(data);
   const [searchText, setSearchText] = useState(); //useState return an array that has the variable and a func to update that variable
   //the value passed in useState() is a default value that will display in the search box
 
@@ -19,10 +19,11 @@ const BodyComponent = () => {
   }, []);
 
   async function getRestoData() {
-    const DATA = await fetch(
+    const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-      );
-    const json = await DATA.json();
+    );
+    const json = await data.json();
+    setRestaurant(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
 
   return (
@@ -42,8 +43,8 @@ const BodyComponent = () => {
         <button
           className="search-btn"
           onClick={() => {
-            const updatedData = filterData(searchText, filteredData);
-            setfilteredData(updatedData);
+            const updatedData = restaurantData(searchText, restaurants);
+            setRestaurant(updatedData);
           }}
         >
           Search
@@ -56,7 +57,7 @@ const BodyComponent = () => {
         <Cards {...data[1].info}/>       */}
         {/* ... spread operator spreads the objects and it works just like data[0] one */}
 
-        {filteredData.map((list) => {
+        {restaurants?.map((list) => {
           return <CardData {...list.info} key={list.info.id} />;
         })}
       </div>
