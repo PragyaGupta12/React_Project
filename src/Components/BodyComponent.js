@@ -5,7 +5,7 @@ import Shimmer from "./Shimmer.js";
 
 function restaurantData(searchText, filteredRestaurants) {
   const restoData = filteredRestaurants.filter((resData) =>
-    resData.info.name.includes(searchText)
+    resData?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );
   return restoData;
 }
@@ -34,8 +34,7 @@ const BodyComponent = () => {
     );
   }
 
-  if (!allRestaurants) return null;//early return. If the restaurant has no data then it returns null
-
+  if (!allRestaurants) return null; //early return. If the restaurant has no data then it returns null
   //Conditional Rendering
   //using ternary operator => if condition ? (then) : (else)
   return allRestaurants?.length === 0 ? (
@@ -72,7 +71,11 @@ const BodyComponent = () => {
         {/* ... spread operator spreads the objects and it works just like data[0] one */}
 
         {filteredRestaurants?.map((list) => {
-          return <CardData {...list.info} key={list.info.id} />;
+          return filteredRestaurants?.length === 0 ? (
+            <h2>No Restaurant found!</h2>
+          ) : (
+            <CardData {...list.info} key={list.info.id} />
+          );
         })}
       </div>
     </>
