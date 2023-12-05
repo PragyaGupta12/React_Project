@@ -38,7 +38,7 @@ const BodyComponent = () => {
 
   //Conditional Rendering
   //using ternary operator => if condition ? (then) : (else)
-  return allRestaurants.length === 0 ? (
+  return allRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <>
@@ -57,7 +57,7 @@ const BodyComponent = () => {
         <button
           className="search-btn"
           onClick={() => {
-            const updatedData = restaurantData(searchText, filteredRestaurants);
+            const updatedData = restaurantData(searchText, allRestaurants);
             setFilteredRestaurant(updatedData);
           }}
         >
