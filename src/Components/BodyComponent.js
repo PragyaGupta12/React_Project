@@ -71,9 +71,7 @@ const BodyComponent = () => {
         {/* ... spread operator spreads the objects and it works just like data[0] one */}
 
         {filteredRestaurants?.map((list) => {
-          return filteredRestaurants?.length === 0 ? (
-            <h2>No Restaurant found!</h2>
-          ) : (
+          return (
             <CardData {...list.info} key={list.info.id} />
           );
         })}

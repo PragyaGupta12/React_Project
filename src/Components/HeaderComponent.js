@@ -1,4 +1,4 @@
-import logo from "/src/logo.png";
+import logo from "/src/img/logo.png";
 
 const AppLogo = () => (
   <a href="/">
