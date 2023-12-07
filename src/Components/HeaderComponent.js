@@ -4,7 +4,7 @@ const AppLogo = () => (
   <a href="/">
     <img src={logo} alt="logo" className="logo" />
   </a>
-); 
+);
 
 const HeaderComponent = () => {
   return (
@@ -22,4 +22,4 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent
+export default HeaderComponent;

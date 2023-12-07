@@ -3,8 +3,9 @@ import ReactDOM from "react-dom/client";
 import HeaderComponent from "./Components/HeaderComponent.js";
 import BodyComponent from "./Components/BodyComponent.js";
 import FooterComponent from "./Components/FooterComponent.js";
+import About from "./Components/About.js";
+import Error from "./Components/Error.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from "./Components/About.js"
 //config-driven UI
 
 const AppLayout = () => {
@@ -20,14 +21,15 @@ const AppLayout = () => {
 
 const appRouter = createBrowserRouter([
   {
-    path:"/",
-    element: <AppLayout/>,
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
   },
   {
-    path:"/about",
-    element:<About/>,
+    path: "/about",
+    element: <About />,
   },
-])
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
