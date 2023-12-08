@@ -6,7 +6,7 @@ import FooterComponent from "./Components/FooterComponent.js";
 import About from "./Components/About.js";
 import Error from "./Components/Error.js";
 import Contact from "./Components/Contact.js";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 //config-driven UI
 
 const AppLayout = () => {
@@ -14,7 +14,7 @@ const AppLayout = () => {
     //this empty tag is React.Fragment and it acts like one parent inside JSX
     <>
       <HeaderComponent />
-      <BodyComponent />
+      <Outlet />
       <FooterComponent />
     </>
   );
@@ -27,6 +27,10 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
     children: [
       {
+        path: "/",
+        element: <BodyComponent />,
+      },
+      {
         path: "/about",
         element: <About />,
       },
@@ -36,7 +40,6 @@ const appRouter = createBrowserRouter([
       },
     ],
   },
-
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

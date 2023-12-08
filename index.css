@@ -1,36 +1,44 @@
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
     margin: 10px;
     border: 1px solid black;
 }
-.nav-items > ul{
+
+.nav-items>ul {
     list-style-type: none;
     display: flex;
 }
-.nav-items >ul>li{
+
+.nav-items>ul>li {
     padding: 10px;
+}
+.nav-items>ul>li>a{
     text-decoration: none;
 }
-.logo{
+.logo {
     margin: 15px;
 }
-.card{
+
+.card {
     width: 200px;
     /* height: auto; */
     border: 1px solid grey;
     padding: 10px;
     margin: 10px;
 }
-.card > img{
-    width: 100%; 
+
+.card>img {
+    width: 100%;
     /* this 100% will make sure that the image fits to the size of the card exactly */
 }
-.restaurant-list{
+
+.restaurant-list {
     display: flex;
     flex-wrap: wrap;
 }
-.shimmer-cards{
+
+.shimmer-cards {
     width: 200px;
     height: 200px;
     background: lightgray;
