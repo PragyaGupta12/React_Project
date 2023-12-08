@@ -5,6 +5,7 @@ import BodyComponent from "./Components/BodyComponent.js";
 import FooterComponent from "./Components/FooterComponent.js";
 import About from "./Components/About.js";
 import Error from "./Components/Error.js";
+import Contact from "./Components/Contact.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //config-driven UI
 
@@ -24,11 +25,18 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     errorElement: <Error />,
+    children: [
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
   },
-  {
-    path: "/about",
-    element: <About />,
-  },
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
