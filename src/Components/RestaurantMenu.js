@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
   },[])
 
   async function getRestroInfo(){
-    const restroData = await fetch("https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5584489&lng=77.2029376&restaurantId=5663&isMenuUx4=false&submitAction=ENTER")
+    const restroData = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448869999999&menuId=229")
     const json = await restroData.json()
     setRestaurant(json.restroData)
     // ?.data?.cards[0]?.card?.card?.info
@@ -20,6 +20,7 @@ const RestaurantMenu = () => {
 
   return(
     <div>
+        <h1>{restroId}</h1>
         <h1>{restaurant.name}</h1>
         <img src={ IMG_CDN_LINK + restaurant.cloudinaryImageId } alt="" />
     </div>
