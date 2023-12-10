@@ -6,23 +6,23 @@ import Shimmer from "./Shimmer.js"
 const RestaurantMenu = () => {
   const params = useParams();
   const { restroId } = params;
-  const [restaurant, setRestaurant] = useState({});
+  const [restaurant, setRestaurant] = useState(null);
 
   useEffect(()=>{
     getRestroInfo();
   },[])
 
   async function getRestroInfo(){
-    const restroData = await fetch("https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5584489&lng=77.2029376&restaurantId=314048&isMenuUx4=false&submitAction=ENTER"+restroId)
-    const json = await restroData.json()
-    setRestaurant(json.restroData)
+    const data = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId="+restroId)
+    const json = await data.json()
+    setRestaurant(json.data)
     // ?.data?.cards[0]?.card?.card?.info
   }
 
   return !restaurant ? <Shimmer/> : ( 
     <div>
         <h1>{restroId}</h1>
-        <h1>{restaurant?.name}</h1>
+        <h1>{restaurant.name}</h1>
         <img src={ IMG_CDN_LINK + restaurant.cloudinaryImageId } alt="" />
     </div>
   )
