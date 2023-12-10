@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
     // ?.data?.cards[0]?.card?.card?.info
   }
 
-  return(
+  return !restaurant ? <Shimmer/> : ( 
     <div>
         <h1>{restroId}</h1>
         <h1>{restaurant.name}</h1>
