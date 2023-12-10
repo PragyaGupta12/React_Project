@@ -38,6 +38,10 @@
     flex-wrap: wrap;
 }
 
+.restaurant-list > a{
+    text-decoration: none;
+}
+
 .shimmer-cards {
     width: 200px;
     height: 200px;
