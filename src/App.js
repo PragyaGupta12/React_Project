@@ -34,6 +34,9 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children:[{
+          path:"profile", //here we dont have to write /profile because react will think it as localhost:1234/profile but it has to be localhost:1234/about/profile
+        }]
       },
       {
         path: "/contact",
