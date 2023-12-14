@@ -8,6 +8,8 @@ import Error from "./Components/Error.js";
 import Contact from "./Components/Contact.js";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurantMenu.js";
+import Profile from "./Components/Profile.js";
+
 //config-driven UI
 
 const AppLayout = () => {
