@@ -10,6 +10,12 @@ const RestaurantMenu = () => {
 
   useEffect(()=>{
     getRestroInfo();
+
+    return ()=>{
+      //this is unmounting in useEffect. This means as soon as we move from this component
+      //any logic written here will be executed.
+    }
+
   },[])
 
   async function getRestroInfo(){
