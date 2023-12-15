@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IMG_CDN_LINK } from "../Config";
+import { IMG_CDN_LINK } from "../config.js";
 import Shimmer from "./Shimmer.js";
 import useRestaurant from "../Utils/useRestaurant.js";
 
@@ -9,7 +8,8 @@ const RestaurantMenu = () => {
   const { restroId } = params;
   // const [restaurant, setRestaurant] = useState(null);
 
-  const restaurant = useRestaurant(); //custom react hook
+  const restaurant = useRestaurant(restroId); //custom react hook
+  
   return !restaurant ? (
     <Shimmer />
   ) : (
