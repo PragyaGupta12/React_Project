@@ -1,16 +1,18 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import HeaderComponent from "./Components/HeaderComponent.js";
 import BodyComponent from "./Components/BodyComponent.js";
 import FooterComponent from "./Components/FooterComponent.js";
-import About from "./Components/About.js";
+// import About from "./Components/About.js";
 import Error from "./Components/Error.js";
 import Contact from "./Components/Contact.js";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurantMenu.js";
 import Profile from "./Components/Profile.js";
+import Shimmer from "./Components/Shimmer.js";
 
 //config-driven UI
+const About = lazy(()=>import('./Components/About.js')) //lazy loading, we have removed the import of About from the top because we are using it here for lazy loading
 
 const AppLayout = () => {
   return (
@@ -36,7 +38,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: <Suspense fallback={<Shimmer/>}><About /></Suspense>,
         children: [
           {
             path: "profile", //here we dont have to write /profile because react will think it as localhost:1234/profile but it has to be localhost:1234/about/profile
