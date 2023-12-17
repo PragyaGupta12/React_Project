@@ -18,6 +18,7 @@ const AppLayout = () => {
     <>
       <HeaderComponent />
       <Outlet />
+      {/* <BodyComponent /> */}
       <FooterComponent />
     </>
   );
@@ -39,7 +40,7 @@ const appRouter = createBrowserRouter([
         children: [
           {
             path: "profile", //here we dont have to write /profile because react will think it as localhost:1234/profile but it has to be localhost:1234/about/profile
-            element: <Profile/>//we need to create an outlet in the parent for this to work and for profile the parent is About. Outlet will be in About.js
+            element: <Profile />, //we need to create an outlet in the parent for this to work and for profile the parent is About. Outlet will be in About.js
           },
         ],
       },

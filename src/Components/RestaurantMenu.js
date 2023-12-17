@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { IMG_CDN_LINK } from "../config.js";
 import Shimmer from "./Shimmer.js";
-import useRestaurant from "../Utils/useRestaurant.js";
+import useRestaurant from "../Utils/useRestaurantMenu.js";
 
 const RestaurantMenu = () => {
   const params = useParams();
