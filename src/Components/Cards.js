@@ -1,4 +1,4 @@
-import { IMG_CDN_LINK } from "../Config";
+import { IMG_CDN_LINK } from "../config.js";
 
 //destructuring the props and passing them as params
 const CardData = ({ cloudinaryImageId, name, cuisines, avgRating }) => {
