@@ -3,7 +3,7 @@ import CardData from "../Components/Cards.js"; //default import
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import useIsOnline from "../Utils/useIsOnline.js";
+import useOnline from "../Utils/useIsOnline.js";
 
 function restaurantData(searchText, filteredRestaurants) {
   const restoData = filteredRestaurants.filter((resData) =>
@@ -38,7 +38,7 @@ const BodyComponent = () => {
 
   if (!allRestaurants) return null; //early return. If the restaurant has no data then it returns null
 
-  const online = useIsOnline();
+  const online = useOnline();
   if (!online) return <h1>Offline, please check the network.</h1>
   
   //Conditional Rendering
