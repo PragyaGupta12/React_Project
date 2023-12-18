@@ -47,7 +47,7 @@ const BodyComponent = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className="search-container p-5">
         <input
           type="text"
           className="search"
@@ -70,7 +70,7 @@ const BodyComponent = () => {
         </button>
       </div>
 
-      <div className="restaurant-list">
+      <div className="flex flex-wrap">
         {/* passing props */}
         {/* <Cards cloudinaryImageId = {data[0].info.cloudinaryImageId} name = {data[0].info.name} cuisines = {data[0].info.cuisines} avgRating = {data[0].info.avgRating}/>
         <Cards {...data[1].info}/>       */}

@@ -1,4 +1,8 @@
-.navbar {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .navbar {
     display: flex;
     justify-content: space-between;
     margin: 10px;
@@ -22,7 +26,7 @@
 
 .card {
     width: 200px;
-    /* height: auto; */
+    height: auto; 
     border: 1px solid grey;
     padding: 10px;
     margin: 10px;
@@ -30,7 +34,7 @@
 
 .card>img {
     width: 100%;
-    /* this 100% will make sure that the image fits to the size of the card exactly */
+    this 100% will make sure that the image fits to the size of the card exactly
 }
 
 .restaurant-list {
@@ -47,4 +51,4 @@
     height: 200px;
     background: lightgray;
     margin: 20px;
-}
+} */
