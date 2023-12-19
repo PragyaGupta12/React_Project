@@ -12,10 +12,11 @@ const HeaderComponent = () => {
     <div className="navbar flex justify-between h-20 bg-pink-50">
       <AppLogo />
       <div className="nav-items">
-        <ul className="flex py-6 me-5 text-green-600">
+        <ul className="flex py-6 me-5 text-lime-600">
           <li className="px-3" ><Link to="/">Home</Link></li>
           <li className="px-3"><Link to="/about">About</Link></li>
           <li className="px-3"><Link to="/contact">Contact</Link></li>
+          <li className="px-3"><Link to="/instamart">Instamart</Link></li>
           <li className="px-3">Cart</li>
         </ul>
       </div>

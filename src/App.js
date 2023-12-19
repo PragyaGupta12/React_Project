@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurantMenu.js";
 import Profile from "./Components/Profile.js";
 import Shimmer from "./Components/Shimmer.js";
+import Instamart from "./Components/Instamart.js"
 
 //config-driven UI
 const About = lazy(()=>import('./Components/About.js')) //lazy loading, we have removed the import of About from the top because we are using it here for lazy loading
@@ -53,6 +54,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:restroId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/instamart",
+        element: <Instamart />,
       },
     ],
   },
