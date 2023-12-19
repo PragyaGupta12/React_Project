@@ -31,11 +31,7 @@ const Section = ({ title, description, isVisible, setIsVisible }) => {
 };
 
 const Instamart = () => {
-  const [sectionConfig, setSectionConfig] = useState({
-    showAbout: false,
-    showTeam: false,
-    showCareer: false,
-  });
+  const [visibleSection, setVisibleSection] = useState('');
   return (
     <div className="h-auto">
       <h1 className="p-2 m-2">Instamart</h1>
@@ -44,13 +40,9 @@ const Instamart = () => {
         description={
           "In August 2020, Swiggy launched its instant grocery delivery service called Instamart using a network of dark stores. In early 2021, the company closed Swiggy Stores and expanded its operations under Instamart."
         }
-        isVisible={sectionConfig.showAbout}
+        isVisible={visibleSection === 'about'}
         setIsVisible={() => {
-          setSectionConfig({
-            showAbout: true,
-            showTeam: false,
-            showCareer: false,
-          });
+            setVisibleSection('about');
         }}
       />
       <Section
@@ -58,13 +50,9 @@ const Instamart = () => {
         description={
           "In August 2020, Swiggy launched its instant grocery delivery service called Instamart using a network of dark stores. In early 2021, the company closed Swiggy Stores and expanded its operations under Instamart."
         }
-        isVisible={sectionConfig.showTeam}
+        isVisible={visibleSection === 'team'}
         setIsVisible={() => {
-          setSectionConfig({
-            showAbout: false,
-            showTeam: true,
-            showCareer: false,
-          });
+            setVisibleSection('team');
         }}
       />
       <Section
@@ -72,13 +60,9 @@ const Instamart = () => {
         description={
           "In August 2020, Swiggy launched its instant grocery delivery service called Instamart using a network of dark stores. In early 2021, the company closed Swiggy Stores and expanded its operations under Instamart."
         }
-        isVisible={sectionConfig.showCareer}
+        isVisible={visibleSection === 'career'}
         setIsVisible={() => {
-          setSectionConfig({
-            showAbout: false,
-            showTeam: false,
-            showCareer: true,
-          });
+            setVisibleSection('career');
         }}
       />
     </div>
