@@ -11,19 +11,21 @@ import RestaurantMenu from "./Components/RestaurantMenu.js";
 import Profile from "./Components/Profile.js";
 import Shimmer from "./Components/Shimmer.js";
 import Instamart from "./Components/Instamart.js"
+import { Provider } from "react-redux";
+import store from './Utils/store.js'
 
 //config-driven UI
 const About = lazy(()=>import('./Components/About.js')) //lazy loading, we have removed the import of About from the top because we are using it here for lazy loading
 
 const AppLayout = () => {
   return (
-    //this empty tag is React.Fragment and it acts like one parent inside JSX
-    <>
+    //the empty tag <></> is React.Fragment and it acts like one parent inside JSX
+    <Provider store ={store}>
       <HeaderComponent />
       <Outlet />
       {/* <BodyComponent /> */}
       <FooterComponent />
-    </>
+    </Provider>
   );
 };
 
