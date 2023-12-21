@@ -13,10 +13,20 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <Shimmer />
   ) : (
-    <div>
-      <h1 className="p-2 m-2 text-lg font-bold">Restaurant ID: {restroId}</h1>
-      {/* <h1>{restaurant.name}</h1>
-      <img src={IMG_CDN_LINK + restaurant.cloudinaryImageId} alt="" /> */}
+    <div className="menu">
+      <div>
+        <h1 className="p-2 m-2 text-lg font-bold">Restaurant ID: {restroId}</h1>
+        {/* <h1>{restaurant?.name}</h1>
+        <img src={IMG_CDN_LINK + restaurant?.cloudinaryImageId} alt="" /> */}
+      </div>
+      <div>
+        <h2 className="p-2 m-2 font-bold">Menu</h2>
+        {/* <ul>
+          {Object.values(restaurant?.menu?.items).map(item=>{
+              <li key={item.id}>{item.name}</li>
+          })}
+        </ul> */}
+      </div>
     </div>
   );
 };
