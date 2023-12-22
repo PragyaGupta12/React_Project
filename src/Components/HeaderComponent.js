@@ -13,6 +13,7 @@ const AppLogo = () => (
 const HeaderComponent = () => {
   const { user } = useContext(UserContext); //user is inside {} because we need to extract it since it has the object in it.
   const cartItems = useSelector(store => store.cart.item)
+  
   return (
     <div className="navbar flex justify-between h-20 bg-pink-50">
       <AppLogo />

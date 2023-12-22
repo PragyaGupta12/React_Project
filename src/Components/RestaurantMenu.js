@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_LINK } from "../config.js";
 import Shimmer from "./Shimmer.js";
 import useRestaurant from "../Utils/useRestaurantMenu.js";
+import { addItem } from "../Utils/cartSlice.js";
+import { useDispatch } from "react-redux";
 
 const RestaurantMenu = () => {
   const params = useParams();
@@ -9,6 +11,11 @@ const RestaurantMenu = () => {
   // const [restaurant, setRestaurant] = useState(null);
 
   const restaurant = useRestaurant(restroId); //custom react hook
+
+  const dispatch = useDispatch();
+  const handleClick = ()=>{
+    dispatch(addItem("FoodItem")) //dispatching an action, this val FoodItem will go into action in cartSlice reducer func addItem.
+  }
 
   return !restaurant ? (
     <Shimmer />
@@ -26,6 +33,9 @@ const RestaurantMenu = () => {
               <li key={item.id}>{item.name}</li>
           })}
         </ul> */}
+        <button className="border border-black p-2 m-2 rounded" onClick={()=>handleClick()}>
+          Add Items
+        </button>
       </div>
     </div>
   );
