@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 
 const AppLogo = () => (
   <a href="/" className="p-3 m-3">
-    <img src={logo} alt="logo" className="logo" />
+    <img src={logo} alt="logo" className="logo" data-testid="logo"/> 
+    {/* the jest doesn't understand html id that's why we have data-testId */}
   </a>
 );
 
