@@ -16,5 +16,5 @@ test("logo should load", () => {
   );
   const logo = header.getAllByTestId("logo") //this is like getElementById and this logo has to be the id in our headerComponent where we have the logo
   expect(logo[0].src).toBe("http://localhost/dummyLogo.png") //[0] because getAllByTestId is geting all the elements that have id logo so it's returning the array
-  //and we need the first one.
+  //and we need the first one. we can also use getByTestId instead of getAllByTestId
 });
