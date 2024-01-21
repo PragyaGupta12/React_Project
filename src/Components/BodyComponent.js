@@ -26,17 +26,20 @@ const BodyComponent = () => {
   async function getRestoData() {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      // "https://www.swiggy.com/mapi/homepage/getCards?lat=12.9351929&lng=77.62448069999999"
     );
     const json = await data.json();
     setFilteredRestaurant(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      // json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants?.info
     );
     setAllRestaurant(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      // json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants?.info
     );
   }
 
-  if (!allRestaurants) return null; //early return. If the restaurant has no data then it returns null
+  // if (!allRestaurants) return null; //early return. If the restaurant has no data then it returns null
 
   const online = useOnline();
   if (!online) return <h1>Offline, please check the network.</h1>
@@ -47,10 +50,10 @@ const BodyComponent = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container p-5">
+      <div className="search-container p-5 text-center">
         <input
           type="text"
-          className="search"
+          className="search border border-black p-2"
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
@@ -60,7 +63,7 @@ const BodyComponent = () => {
           }}
         />
         <button
-          className="search-btn"
+          className="search-btn border rounded bg-pink-50 m-2 p-2"
           onClick={() => {
             const updatedData = restaurantData(searchText, allRestaurants);
             setFilteredRestaurant(updatedData);
