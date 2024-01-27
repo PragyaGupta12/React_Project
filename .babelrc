@@ -1,8 +1,9 @@
 {
-    "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]],
-    "presets": [
-        ["@babel/preset-env", {"targets": {"node": "current"}}],//we have added this for test.js file to understand import
-        ["@babel/preset-react", { "runtime": "automatic"}] //we have added this for test.js file to understand jsx
-        ]//we have everything in "" because this file expects JSON obj and not JS obj.
+    "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
+    // ,
+    // "presets": [
+    //     ["@babel/preset-env", {"targets": {"node": "current"}}],//we have added this for test.js file to understand import
+    //     ["@babel/preset-react", { "runtime": "automatic"}] //we have added this for test.js file to understand jsx
+    //     ]//we have everything in "" because this file expects JSON obj and not JS obj.
         //make sure to install the dev dependencies of both mentioned above
 }
