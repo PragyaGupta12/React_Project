@@ -80,7 +80,8 @@ const BodyComponent = () => {
         {/* ... spread operator spreads the objects and it works just like data[0] one */}
 
         {filteredRestaurants?.map((list) => {
-          return (
+          return filteredRestaurants?.length === 0 ? (
+            <Shimmer />) : (
             <Link to={"/restaurant/" + list.info.id} key={list.info.id}>
               <CardData {...list.info} />
             </Link>
