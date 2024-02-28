@@ -19,6 +19,8 @@ const BodyComponent = () => {
   const [searchText, setSearchText] = useState(); //useState return an array that has the variable and a func to update that variable
   //the value passed in useState() is a default value that will display in the search box
 
+  const [loading, setLoading] = useState(true); 
+
   useEffect(() => {
     getRestoData();
   }, []); //empty dependency array that means this API fetch will load after the page is rendered.
@@ -37,12 +39,17 @@ const BodyComponent = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       // json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants?.info
     );
+    setLoading(false);
   }
 
   // if (!allRestaurants) return null; //early return. If the restaurant has no data then it returns null
 
   const online = useOnline();
   if (!online) return <h1>Offline, please check the network.</h1>
+
+  if (loading) {
+    return <h1>There is Network Latency. Loading...</h1>; // Render loading indicator
+  }
   
   //Conditional Rendering
   //using ternary operator => if condition ? (then) : (else)
@@ -80,8 +87,7 @@ const BodyComponent = () => {
         {/* ... spread operator spreads the objects and it works just like data[0] one */}
 
         {filteredRestaurants?.map((list) => {
-          return filteredRestaurants?.length === 0 ? (
-            <Shimmer />) : (
+          return (
             <Link to={"/restaurant/" + list.info.id} key={list.info.id}>
               <CardData {...list.info} />
             </Link>
