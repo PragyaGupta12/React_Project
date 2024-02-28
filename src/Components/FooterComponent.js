@@ -1,6 +1,6 @@
 const FooterComponent = () => {
   return (
-    <div className="p-2 m-2">
+    <div className="p-2 m-2 border-t-2">
       <ul className="p-2 m-2">
         <li>Contact Us</li>
       </ul>
