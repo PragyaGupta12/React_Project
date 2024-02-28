@@ -48,7 +48,7 @@ const BodyComponent = () => {
   if (!online) return <h1>Offline, please check the network.</h1>
 
   if (loading) {
-    return <h1>There is Network Latency. Loading...</h1>; // Render loading indicator
+    return <h1 className="m-2 p-2">There is Network Latency. Loading...</h1>; // Render loading indicator
   }
   
   //Conditional Rendering
