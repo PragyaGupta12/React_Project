@@ -1,6 +1,6 @@
 const FooterComponent = () => {
   return (
-    <div className="flex flex-col min-h-screen border-t-2 border-black relative inset-x-0 bottom-0 bg-gray-200 text-center">
+    <div className="border-t-2 border-black relative inset-x-0 bottom-0 bg-gray-200 text-center">
       <ul className="p-2 m-2">
         <li>Contact Us</li>
       </ul>
